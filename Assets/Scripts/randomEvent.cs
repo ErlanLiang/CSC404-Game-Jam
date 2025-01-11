@@ -1,11 +1,15 @@
 using UnityEngine;
+using System.Collections;
 
 public class randomEvent : MonoBehaviour
 {
     public float event1chance = 0.5f;
-    public float event2chance = 0.1f;
+    public float event2chance = 0.8f;
 
-    public float time = 1.0f;
+    public float event1time = 3f;
+    public float event2time = 10f;
+
+    public float time = 15.0f;
 
     void Start()
     {
@@ -18,18 +22,32 @@ public class randomEvent : MonoBehaviour
 
         if (time < 0.0f)
         {
-            time = 1.0f;
             float randValue = Random.value;
             float randValue2 = Random.value;
 
-            if (randValue < event2chance)
+            if (randValue < event1chance)
             {
-                Debug.Log("Event 2 happens");
+                StartCoroutine((WaitEvent(3)));
+                time = 15.0f;
             }
-            else if (randValue2 < event1chance)
+            else if (randValue2 < event2chance)
             {
-                Debug.Log("Event 1 happens");
+                StartCoroutine((WaitEvent(10)));
+                time = 15.0f;
+            }
+            else
+            {
+                time = 15.0f;
             }
         }
+    }
+
+    IEnumerator WaitEvent(float time)
+    {
+        Debug.Log("Started Event at timestamp : " + Time.time);
+
+        yield return new WaitForSeconds(time);
+
+        Debug.Log("Finished Event at timestamp : " + Time.time);
     }
 }
