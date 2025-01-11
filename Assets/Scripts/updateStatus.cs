@@ -9,9 +9,15 @@ public class Status : MonoBehaviour
     public float stamina = 50.0f;
     public float embarrasment = 50.0f;
 
+    private float heatRateRate = 0.5f;
+
     public float heatRate = 3f;
     public float staminaRate = 1f;
-    public float embarrasmentRate = -1f;
+    public float embarrasmentRate = -2f;
+
+    private bool died = false;
+
+    public SFX sfx;
 
     public randomEvent randomEventInstance;
     public StudioEventEmitter studioEventEmitter;
@@ -36,8 +42,16 @@ public class Status : MonoBehaviour
 
         if (budyHeat > 100 || stamina < 0 || embarrasment > 100)
         {
+            if (!died)
+            {
+                died = true;
+                sfx.PlayDeath();
+            }
+
             Debug.Log("you died");
         }
+
+        heatRate += heatRateRate * Time.deltaTime;
 
         CheckAudioParameter();
         updateStatusUI();
@@ -48,9 +62,12 @@ public class Status : MonoBehaviour
     public void button1Click() // Water
     {
         Debug.Log("Button 1 Clicked, Water");
+
+        sfx.PlayDrink();
+
         budyHeat -= 10;
         stamina += 2;
-        if (randomEventInstance.currentEvent != Event.Clap)
+        if (randomEventInstance.currentEvent == Event.None)
         {
             embarrasment += 2;
         }
@@ -59,9 +76,12 @@ public class Status : MonoBehaviour
     public void button2Click() // Fanning
     {
         Debug.Log("Button 2 Clicked, Fanning");
+
+        sfx.PlayFanning();
+
         budyHeat *= 0.9f;
         stamina -= 10;
-        if (randomEventInstance.currentEvent != Event.Clap)
+        if (randomEventInstance.currentEvent == Event.None)
         {
             embarrasment += 10;
         }
@@ -78,6 +98,7 @@ public class Status : MonoBehaviour
         budyHeat = 30;
         stamina = 100;
         embarrasment = 0;
+        died = false; 
     }
 
     private void updateStatusUI()

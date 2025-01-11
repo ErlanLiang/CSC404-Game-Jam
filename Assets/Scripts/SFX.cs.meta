@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: f90581fbf5edab1458bf82eada0b6ada
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fanning: {fileID: 8300000, guid: 5f759e32f3bed32438425341a15766b4, type: 3}
+  - drink: {fileID: 8300000, guid: 1883b2e2afb33c34a9641cd5c811b71d, type: 3}
+  - clap: {fileID: 8300000, guid: 9b559667c87a6bb489e8f2eda0bfdaf7, type: 3}
+  - truck: {fileID: 8300000, guid: 53af6ff999583a741b8d73b4e0533180, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
