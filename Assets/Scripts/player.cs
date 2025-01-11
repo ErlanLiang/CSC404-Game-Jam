@@ -10,10 +10,6 @@ public class player : MonoBehaviour
     [SerializeField] private Slider Slider1;
     [SerializeField] private Slider Slider2;
     [SerializeField] private Slider Slider3;
-
-    [SerializeField] private Button button1;
-    [SerializeField] private Button button2;
-    [SerializeField] private Button button3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,25 +27,25 @@ public class player : MonoBehaviour
         updateStatusUI();
     }
 
-    public void button1Click() //water
+    public void button1Click() // Water
     {
+        Debug.Log("Button 1 Clicked, Water");
         budyHeat -= 10;
         stamina -= 10;
-        embarrasment -= 10;
+        embarrasment += 10;
     }
 
-    public void button2Click() //f
+    public void button2Click() // Fanning
     {
+        Debug.Log("Button 2 Clicked, Fanning");
         budyHeat += 10;
         stamina += 10;
         embarrasment -= 10;
     }
 
-    public void button3Click() 
+    public void button3Click() // 
     {
-        budyHeat -= 10;
-        stamina += 10;
-        embarrasment += 10;
+        Debug.Log("Button 3 Clicked");
     }
 
     private void updateStatusUI()

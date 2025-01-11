@@ -459,8 +459,8 @@ RectTransform:
   - {fileID: 1845062540}
   - {fileID: 552271381}
   - {fileID: 2025617240}
-  - {fileID: 1051805738}
   - {fileID: 1395230474}
+  - {fileID: 1051805738}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -911,7 +911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 782.19055, y: 243.63309}
+  m_AnchoredPosition: {x: 782.19055, y: 410}
   m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &552271382
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1136,7 +1136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 782.1906, y: 320.5699}
+  m_AnchoredPosition: {x: 782.1906, y: 486.93683}
   m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669278835
@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1513,7 +1513,7 @@ GameObject:
   - component: {fileID: 1051805740}
   - component: {fileID: 1051805739}
   m_Layer: 5
-  m_Name: Button2
+  m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1536,7 +1536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 511.54172, y: -316.82648}
+  m_AnchoredPosition: {x: 751, y: -455}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051805739
@@ -1585,7 +1585,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1086133141}
         m_TargetAssemblyTypeName: player, Assembly-CSharp
-        m_MethodName: button2Click
+        m_MethodName: button3Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1750,9 +1750,6 @@ MonoBehaviour:
   Slider1: {fileID: 669278835}
   Slider2: {fileID: 1845062541}
   Slider3: {fileID: 552271382}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
 --- !u!136 &1086133142
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1858,7 +1855,7 @@ GameObject:
   - component: {fileID: 1395230476}
   - component: {fileID: 1395230475}
   m_Layer: 5
-  m_Name: Button3
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1881,7 +1878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 511.54172, y: -247.58337}
+  m_AnchoredPosition: {x: 751, y: -385.7569}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1395230475
@@ -1930,7 +1927,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1086133141}
         m_TargetAssemblyTypeName: player, Assembly-CSharp
-        m_MethodName: button3Click
+        m_MethodName: button2Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2243,7 +2240,6 @@ GameObject:
   - component: {fileID: 1657719456}
   - component: {fileID: 1657719455}
   - component: {fileID: 1657719454}
-  - component: {fileID: 1657719453}
   m_Layer: 0
   m_Name: Student2
   m_TagString: Player
@@ -2251,27 +2247,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1657719453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657719452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58bb7ef244a9f02428f27b66529e54e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  budyHeat: 50
-  stamina: 50
-  embarrasment: 50
-  Slider1: {fileID: 0}
-  Slider2: {fileID: 0}
-  Slider3: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
 --- !u!136 &1657719454
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2375,7 +2350,6 @@ GameObject:
   - component: {fileID: 1715329890}
   - component: {fileID: 1715329889}
   - component: {fileID: 1715329888}
-  - component: {fileID: 1715329887}
   m_Layer: 0
   m_Name: Student1
   m_TagString: Player
@@ -2383,27 +2357,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1715329887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715329886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58bb7ef244a9f02428f27b66529e54e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  budyHeat: 50
-  stamina: 50
-  embarrasment: 50
-  Slider1: {fileID: 0}
-  Slider2: {fileID: 0}
-  Slider3: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
 --- !u!136 &1715329888
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2702,7 +2655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 782.19055, y: 282.10147}
+  m_AnchoredPosition: {x: 782.19055, y: 448.4684}
   m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845062541
@@ -2718,7 +2671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2792,7 +2745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 511.54172, y: -175.77571}
+  m_AnchoredPosition: {x: 751, y: -313.94922}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2025617241
