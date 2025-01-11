@@ -2260,7 +2260,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   event1chance: 0.5
   event2chance: 0.1
+  event1time: 3
+  event2time: 10
   time: 1
+  currentEvent: 0
 --- !u!114 &1086133147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2279,6 +2282,7 @@ MonoBehaviour:
   heatRate: 3
   staminaRate: 1
   embarrasmentRate: -1
+  randomEventInstance: {fileID: 1086133146}
   Slider1: {fileID: 669278835}
   Slider2: {fileID: 1845062541}
   Slider3: {fileID: 552271382}
