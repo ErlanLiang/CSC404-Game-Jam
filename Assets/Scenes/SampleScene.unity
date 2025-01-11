@@ -1987,8 +1987,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1086133141}
-        m_TargetAssemblyTypeName: player, Assembly-CSharp
+      - m_Target: {fileID: 1086133147}
+        m_TargetAssemblyTypeName: Status, Assembly-CSharp
         m_MethodName: button3Click
         m_Mode: 1
         m_Arguments:
@@ -2129,6 +2129,8 @@ GameObject:
   - component: {fileID: 1086133143}
   - component: {fileID: 1086133142}
   - component: {fileID: 1086133141}
+  - component: {fileID: 1086133147}
+  - component: {fileID: 1086133146}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2148,12 +2150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58bb7ef244a9f02428f27b66529e54e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  budyHeat: 50
-  stamina: 50
-  embarrasment: 50
-  Slider1: {fileID: 669278835}
-  Slider2: {fileID: 1845062541}
-  Slider3: {fileID: 552271382}
+  status: {fileID: 1086133147}
+  randomEvent: {fileID: 1086133146}
 --- !u!136 &1086133142
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2248,6 +2246,42 @@ Transform:
   - {fileID: 1734419816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1086133146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086133140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1449176b768d1854884e78423f81063e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event1chance: 0.5
+  event2chance: 0.1
+  time: 1
+--- !u!114 &1086133147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086133140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67b177eecd95814b98e0f982f47a6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  budyHeat: 50
+  stamina: 50
+  embarrasment: 50
+  heatRate: 3
+  staminaRate: 1
+  embarrasmentRate: -1
+  Slider1: {fileID: 669278835}
+  Slider2: {fileID: 1845062541}
+  Slider3: {fileID: 552271382}
 --- !u!1 &1395230473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,8 +2365,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1086133141}
-        m_TargetAssemblyTypeName: player, Assembly-CSharp
+      - m_Target: {fileID: 1086133147}
+        m_TargetAssemblyTypeName: Status, Assembly-CSharp
         m_MethodName: button2Click
         m_Mode: 1
         m_Arguments:
@@ -3380,8 +3414,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1086133141}
-        m_TargetAssemblyTypeName: player, Assembly-CSharp
+      - m_Target: {fileID: 1086133147}
+        m_TargetAssemblyTypeName: Status, Assembly-CSharp
         m_MethodName: button1Click
         m_Mode: 1
         m_Arguments:
