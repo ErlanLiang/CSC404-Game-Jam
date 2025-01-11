@@ -1,71 +1,23 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class player : MonoBehaviour
-{   
-    public float budyHeat = 50.0f;
-    public float stamina = 50.0f;
-    public float embarrasment = 50.0f;
+{
+    public Status status;
+    public randomEvent randomEvent;
 
-    public float heatRate = 3f;
-    public float staminaRate = 1f;
-    public float embarrasmentRate = 1f;
-
-    [SerializeField] private Slider Slider1;
-    [SerializeField] private Slider Slider2;
-    [SerializeField] private Slider Slider3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        updateStatusUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        budyHeat += heatRate * Time.deltaTime;
-        stamina += staminaRate * Time.deltaTime;
-        embarrasment += embarrasmentRate * Time.deltaTime;
-
-        if (budyHeat > 100 || stamina < 0 || embarrasment > 100)
-        {
-            Debug.Log("you died");
-        }
     }
 
     private void FixedUpdate()
     {
-        updateStatusUI();
-    }
-
-    public void button1Click() // Water
-    {
-        Debug.Log("Button 1 Clicked, Water");
-        budyHeat -= 10;
-        stamina += 2;
-        embarrasment += 2;
-    }
-
-    public void button2Click() // Fanning
-    {
-        Debug.Log("Button 2 Clicked, Fanning");
-        budyHeat *= 0.9f;
-        stamina -= 10;
-        embarrasment += 10;
-    }
-
-    public void button3Click() // 
-    {
-        Debug.Log("Button 3 Clicked");
-        budyHeat = 30;
-        stamina = 100;
-        embarrasment = 0;
-    }
-
-    private void updateStatusUI()
-    {
-        Slider1.value = budyHeat / 100;
-        Slider2.value = stamina / 100;
-        Slider3.value = embarrasment / 100;
     }
 }
