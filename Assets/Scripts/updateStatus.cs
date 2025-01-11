@@ -13,6 +13,9 @@ public class Status : MonoBehaviour
     public float embarrasmentRate = -1f;
 
     public randomEvent randomEventInstance;
+    public bool aliveStatus = true;
+
+    public Image Death;
 
     [SerializeField] private Slider Slider1;
     [SerializeField] private Slider Slider2;
@@ -35,6 +38,7 @@ public class Status : MonoBehaviour
         if (budyHeat > 100 || stamina < 0 || embarrasment > 100)
         {
             Debug.Log("you died");
+            Death.enabled = true;
         }
 
         updateStatusUI();
