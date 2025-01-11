@@ -1771,6 +1771,7 @@ GameObject:
   - component: {fileID: 1086133147}
   - component: {fileID: 1086133146}
   - component: {fileID: 1086133148}
+  - component: {fileID: 1086133149}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1919,9 +1920,10 @@ MonoBehaviour:
   embarrasmentRate: -1
   sfx: {fileID: 1734419817}
   randomEventInstance: {fileID: 1086133146}
-  Slider1: {fileID: 669278835}
-  Slider2: {fileID: 1845062541}
-  Slider3: {fileID: 552271382}
+  studioEventEmitter: {fileID: 630529032}
+  Slider1: {fileID: 1034819245}
+  Slider2: {fileID: 1899571858}
+  Slider3: {fileID: 399874404}
 --- !u!114 &1086133148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1939,6 +1941,20 @@ MonoBehaviour:
   clap: {fileID: 8300000, guid: 9b559667c87a6bb489e8f2eda0bfdaf7, type: 3}
   truck: {fileID: 8300000, guid: a913723494cb6a54aa00e1e8a252c243, type: 3}
   death: {fileID: 0}
+--- !u!114 &1086133149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086133140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1395230473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,7 +2949,6 @@ RectTransform:
   m_LocalScale: {x: 0.88698995, y: 3.50961, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1251783721}
   - {fileID: 352059320}
   m_Father: {fileID: 310586656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
