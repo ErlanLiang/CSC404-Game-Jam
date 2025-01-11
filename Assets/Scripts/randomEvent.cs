@@ -1,5 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using static Unity.VisualScripting.FlowStateWidget;
+
+
+public enum Event
+{
+    None,
+    Clap,
+    Truck
+}
 
 public class randomEvent : MonoBehaviour
 {
@@ -10,6 +19,10 @@ public class randomEvent : MonoBehaviour
     public float event2time = 10f;
 
     public float time = 15.0f;
+
+    public Event currentEvent = Event.None;
+
+
 
     void Start()
     {
@@ -22,17 +35,23 @@ public class randomEvent : MonoBehaviour
 
         if (time < 0.0f)
         {
+            if (currentEvent != Event.None)
+            {
+                time = 15.0f;
+                return;
+            }
+
             float randValue = Random.value;
             float randValue2 = Random.value;
 
             if (randValue < event1chance)
             {
-                StartCoroutine((WaitEvent(3)));
+                StartCoroutine((WaitEvent(Event.Clap, 3)));
                 time = 15.0f;
             }
             else if (randValue2 < event2chance)
             {
-                StartCoroutine((WaitEvent(10)));
+                StartCoroutine((WaitEvent(Event.Truck, 10)));
                 time = 15.0f;
             }
             else
@@ -42,12 +61,14 @@ public class randomEvent : MonoBehaviour
         }
     }
 
-    IEnumerator WaitEvent(float time)
+    IEnumerator WaitEvent(Event eventType, float time)
     {
-        Debug.Log("Started Event at timestamp : " + Time.time);
+        currentEvent = eventType;
+        Debug.Log(string.Format("Started Event {0} at timestamp : {1}", eventType, Time.time));
 
         yield return new WaitForSeconds(time);
 
         Debug.Log("Finished Event at timestamp : " + Time.time);
+        currentEvent = Event.None;
     }
 }

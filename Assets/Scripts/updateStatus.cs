@@ -12,6 +12,8 @@ public class Status : MonoBehaviour
     public float staminaRate = 1f;
     public float embarrasmentRate = -1f;
 
+    public randomEvent randomEventInstance;
+
     [SerializeField] private Slider Slider1;
     [SerializeField] private Slider Slider2;
     [SerializeField] private Slider Slider3;
@@ -45,7 +47,10 @@ public class Status : MonoBehaviour
         Debug.Log("Button 1 Clicked, Water");
         budyHeat -= 10;
         stamina += 2;
-        embarrasment += 2;
+        if (randomEventInstance.currentEvent != Event.Clap)
+        {
+            embarrasment += 2;
+        }
     }
 
     public void button2Click() // Fanning
@@ -53,7 +58,10 @@ public class Status : MonoBehaviour
         Debug.Log("Button 2 Clicked, Fanning");
         budyHeat *= 0.9f;
         stamina -= 10;
-        embarrasment += 10;
+        if (randomEventInstance.currentEvent != Event.Clap)
+        {
+            embarrasment += 10;
+        }
     }
 
     public void button3Click() // 
