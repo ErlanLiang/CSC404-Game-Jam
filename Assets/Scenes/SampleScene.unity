@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Reset (for debugging)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Fan yourself
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2188,6 +2188,7 @@ GameObject:
   - component: {fileID: 1086133141}
   - component: {fileID: 1086133147}
   - component: {fileID: 1086133146}
+  - component: {fileID: 1086133148}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2315,12 +2316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1449176b768d1854884e78423f81063e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  event1chance: 0.5
-  event2chance: 0.1
-  event1time: 3
-  event2time: 10
-  time: 1
   currentEvent: 0
+  sfx: {fileID: 1734419817}
 --- !u!114 &1086133147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2339,10 +2336,27 @@ MonoBehaviour:
   heatRate: 3
   staminaRate: 1
   embarrasmentRate: -1
+  sfx: {fileID: 1734419817}
   randomEventInstance: {fileID: 1086133146}
   Slider1: {fileID: 669278835}
   Slider2: {fileID: 1845062541}
   Slider3: {fileID: 552271382}
+--- !u!114 &1086133148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086133140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90581fbf5edab1458bf82eada0b6ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fanning: {fileID: 8300000, guid: 5f759e32f3bed32438425341a15766b4, type: 3}
+  drink: {fileID: 8300000, guid: 1883b2e2afb33c34a9641cd5c811b71d, type: 3}
+  clap: {fileID: 8300000, guid: 9b559667c87a6bb489e8f2eda0bfdaf7, type: 3}
+  truck: {fileID: 8300000, guid: a913723494cb6a54aa00e1e8a252c243, type: 3}
 --- !u!1 &1395230473
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,8 +3257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90581fbf5edab1458bf82eada0b6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterBottle: {fileID: 8300000, guid: 53af6ff999583a741b8d73b4e0533180, type: 3}
-  fanning: {fileID: 0}
+  fanning: {fileID: 8300000, guid: 5f759e32f3bed32438425341a15766b4, type: 3}
+  drink: {fileID: 8300000, guid: 1883b2e2afb33c34a9641cd5c811b71d, type: 3}
+  clap: {fileID: 8300000, guid: 9b559667c87a6bb489e8f2eda0bfdaf7, type: 3}
+  truck: {fileID: 8300000, guid: a913723494cb6a54aa00e1e8a252c243, type: 3}
 --- !u!1 &1739765095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,7 +3318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Drink
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
