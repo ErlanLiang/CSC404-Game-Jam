@@ -24,6 +24,11 @@ public class player : MonoBehaviour
     {
         budyHeat += heatRate * Time.deltaTime;
         stamina += staminaRate * Time.deltaTime;
+
+        if (budyHeat > 100 || stamina < 0 || embarrasment > 100)
+        {
+            Debug.Log("you died");
+        }
     }
 
     private void FixedUpdate()
@@ -42,7 +47,7 @@ public class player : MonoBehaviour
     public void button2Click() // Fanning
     {
         Debug.Log("Button 2 Clicked, Fanning");
-        budyHeat += 10;
+        budyHeat *= 0.9f;
         stamina -= 10;
         embarrasment += 10;
     }
@@ -50,9 +55,9 @@ public class player : MonoBehaviour
     public void button3Click() // 
     {
         Debug.Log("Button 3 Clicked");
-        budyHeat = 100;
+        budyHeat = 30;
         stamina = 100;
-        embarrasment = 100;
+        embarrasment = 0;
     }
 
     private void updateStatusUI()
