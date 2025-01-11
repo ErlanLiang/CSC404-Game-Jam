@@ -12,15 +12,15 @@ public enum Event
 
 public class randomEvent : MonoBehaviour
 {
-    public float event1chance = 0.5f;
-    public float event2chance = 0.8f;
+    private float event1chance = 0.05f;
+    private float event2chance = 0.3f;
 
-    public float event1time = 3f;
-    public float event2time = 10f;
-
-    public float time = 15.0f;
+    private float defTime = 1.0f;
+    private float time = 1.0f;
 
     public Event currentEvent = Event.None;
+
+    public SFX sfx;
 
 
 
@@ -37,33 +37,36 @@ public class randomEvent : MonoBehaviour
         {
             if (currentEvent != Event.None)
             {
-                time = 15.0f;
+                time = defTime;
                 return;
             }
 
             float randValue = Random.value;
-            float randValue2 = Random.value;
 
             if (randValue < event1chance)
             {
-                StartCoroutine((WaitEvent(Event.Clap, 3)));
-                time = 15.0f;
+                StartCoroutine((WaitEvent(Event.Clap, 5)));
             }
-            else if (randValue2 < event2chance)
+            else if (randValue < event1chance + event2chance)
             {
-                StartCoroutine((WaitEvent(Event.Truck, 10)));
-                time = 15.0f;
+                StartCoroutine((WaitEvent(Event.Truck, 2)));
             }
-            else
-            {
-                time = 15.0f;
-            }
+            time = defTime;
         }
     }
 
     IEnumerator WaitEvent(Event eventType, float time)
     {
         currentEvent = eventType;
+
+        switch (eventType)
+        {
+            case Event.Clap:
+                sfx.PlayClap(); break;
+            case Event.Truck:
+                sfx.PlayTruck(); break;
+        }
+
         Debug.Log(string.Format("Started Event {0} at timestamp : {1}", eventType, Time.time));
 
         yield return new WaitForSeconds(time);

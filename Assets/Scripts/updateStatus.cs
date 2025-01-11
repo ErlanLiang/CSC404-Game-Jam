@@ -8,9 +8,13 @@ public class Status : MonoBehaviour
     public float stamina = 50.0f;
     public float embarrasment = 50.0f;
 
+    private float heatRateRate = 0.5f;
+
     public float heatRate = 3f;
     public float staminaRate = 1f;
-    public float embarrasmentRate = -1f;
+    public float embarrasmentRate = -2f;
+
+    public SFX sfx;
 
     public randomEvent randomEventInstance;
 
@@ -37,6 +41,8 @@ public class Status : MonoBehaviour
             Debug.Log("you died");
         }
 
+        heatRate += heatRateRate * Time.deltaTime;
+
         updateStatusUI();
     }
 
@@ -45,9 +51,12 @@ public class Status : MonoBehaviour
     public void button1Click() // Water
     {
         Debug.Log("Button 1 Clicked, Water");
+
+        sfx.PlayDrink();
+
         budyHeat -= 10;
         stamina += 2;
-        if (randomEventInstance.currentEvent != Event.Clap)
+        if (randomEventInstance.currentEvent == Event.None)
         {
             embarrasment += 2;
         }
@@ -56,9 +65,12 @@ public class Status : MonoBehaviour
     public void button2Click() // Fanning
     {
         Debug.Log("Button 2 Clicked, Fanning");
+
+        sfx.PlayFanning();
+
         budyHeat *= 0.9f;
         stamina -= 10;
-        if (randomEventInstance.currentEvent != Event.Clap)
+        if (randomEventInstance.currentEvent == Event.None)
         {
             embarrasment += 10;
         }
