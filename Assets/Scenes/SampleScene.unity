@@ -2357,6 +2357,7 @@ MonoBehaviour:
   drink: {fileID: 8300000, guid: 1883b2e2afb33c34a9641cd5c811b71d, type: 3}
   clap: {fileID: 8300000, guid: 9b559667c87a6bb489e8f2eda0bfdaf7, type: 3}
   truck: {fileID: 8300000, guid: a913723494cb6a54aa00e1e8a252c243, type: 3}
+  death: {fileID: 0}
 --- !u!1 &1395230473
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3262,7 @@ MonoBehaviour:
   drink: {fileID: 8300000, guid: 1883b2e2afb33c34a9641cd5c811b71d, type: 3}
   clap: {fileID: 8300000, guid: 9b559667c87a6bb489e8f2eda0bfdaf7, type: 3}
   truck: {fileID: 8300000, guid: a913723494cb6a54aa00e1e8a252c243, type: 3}
+  death: {fileID: 8300000, guid: 53af6ff999583a741b8d73b4e0533180, type: 3}
 --- !u!1 &1739765095
 GameObject:
   m_ObjectHideFlags: 0

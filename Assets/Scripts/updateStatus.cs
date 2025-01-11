@@ -14,6 +14,8 @@ public class Status : MonoBehaviour
     public float staminaRate = 1f;
     public float embarrasmentRate = -2f;
 
+    private bool died = false;
+
     public SFX sfx;
 
     public randomEvent randomEventInstance;
@@ -38,6 +40,12 @@ public class Status : MonoBehaviour
 
         if (budyHeat > 100 || stamina < 0 || embarrasment > 100)
         {
+            if (!died)
+            {
+                died = true;
+                sfx.PlayDeath();
+            }
+
             Debug.Log("you died");
         }
 
@@ -87,6 +95,7 @@ public class Status : MonoBehaviour
         budyHeat = 30;
         stamina = 100;
         embarrasment = 0;
+        died = false; 
     }
 
     private void updateStatusUI()
