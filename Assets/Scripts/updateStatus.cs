@@ -19,6 +19,9 @@ public class Status : MonoBehaviour
     public SFX sfx;
 
     public randomEvent randomEventInstance;
+    public bool aliveStatus = true;
+
+    public Image Death;
 
     [SerializeField] private Slider Slider1;
     [SerializeField] private Slider Slider2;
@@ -47,6 +50,7 @@ public class Status : MonoBehaviour
             }
 
             Debug.Log("you died");
+            Death.enabled = true;
         }
 
         heatRate += heatRateRate * Time.deltaTime;
