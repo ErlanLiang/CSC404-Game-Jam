@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using FMODUnity;
 
 public class Status : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Status : MonoBehaviour
     public SFX sfx;
 
     public randomEvent randomEventInstance;
+    public StudioEventEmitter studioEventEmitter;
 
     [SerializeField] private Slider Slider1;
     [SerializeField] private Slider Slider2;
@@ -51,6 +53,7 @@ public class Status : MonoBehaviour
 
         heatRate += heatRateRate * Time.deltaTime;
 
+        CheckAudioParameter();
         updateStatusUI();
     }
 
@@ -103,5 +106,31 @@ public class Status : MonoBehaviour
         Slider1.value = budyHeat / 100;
         Slider2.value = stamina / 100;
         Slider3.value = embarrasment / 100;
+    }
+
+    void CheckAudioParameter()
+    {
+        studioEventEmitter.SetParameter("musicQuality", getMusicQuality());
+        Debug.Log("[Audio] Music Quality: " + getMusicQuality());
+    }
+
+    private float getMusicQuality()
+    {
+        if (stamina <= 0 || budyHeat >= 100 || embarrasment >= 100)
+        {
+            return 0.0f;
+        }
+        else if (stamina < 33 || budyHeat > 66 || embarrasment > 66)
+        {
+            return 1.0f;
+        }
+        else if (stamina < 66 || budyHeat > 33 || embarrasment > 33)
+        {
+            return 2.0f;
+        }
+        else
+        {
+            return 3.0f;
+        }
     }
 }

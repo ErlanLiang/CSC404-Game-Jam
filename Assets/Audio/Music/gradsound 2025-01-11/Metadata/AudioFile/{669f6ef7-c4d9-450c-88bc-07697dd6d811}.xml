@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{669f6ef7-c4d9-450c-88bc-07697dd6d811}">
+		<property name="assetPath">
+			<value>pomp 2025-01-11 - 0011 - Group - Doing Good.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>60</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4ddb3e6a-8a75-49e6-818c-ba19e4b5dcc9}</destination>
+		</relationship>
+	</object>
+</objects>
