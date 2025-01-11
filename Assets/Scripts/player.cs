@@ -7,8 +7,9 @@ public class player : MonoBehaviour
     public float stamina = 50.0f;
     public float embarrasment = 50.0f;
 
-    public float heatRate = 1f;
+    public float heatRate = 3f;
     public float staminaRate = 1f;
+    public float embarrasmentRate = 1f;
 
     [SerializeField] private Slider Slider1;
     [SerializeField] private Slider Slider2;
@@ -24,6 +25,7 @@ public class player : MonoBehaviour
     {
         budyHeat += heatRate * Time.deltaTime;
         stamina += staminaRate * Time.deltaTime;
+        embarrasment += embarrasmentRate * Time.deltaTime;
 
         if (budyHeat > 100 || stamina < 0 || embarrasment > 100)
         {
