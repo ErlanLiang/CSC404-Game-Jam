@@ -7,6 +7,10 @@ public class player : MonoBehaviour
     public float stamina = 50.0f;
     public float embarrasment = 50.0f;
 
+    public float heatRate = 3f;
+    public float staminaRate = 1f;
+    public float embarrasmentRate = 1f;
+
     [SerializeField] private Slider Slider1;
     [SerializeField] private Slider Slider2;
     [SerializeField] private Slider Slider3;
@@ -19,7 +23,14 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        budyHeat += heatRate * Time.deltaTime;
+        stamina += staminaRate * Time.deltaTime;
+        embarrasment += embarrasmentRate * Time.deltaTime;
+
+        if (budyHeat > 100 || stamina < 0 || embarrasment > 100)
+        {
+            Debug.Log("you died");
+        }
     }
 
     private void FixedUpdate()
@@ -31,21 +42,24 @@ public class player : MonoBehaviour
     {
         Debug.Log("Button 1 Clicked, Water");
         budyHeat -= 10;
-        stamina -= 10;
-        embarrasment += 10;
+        stamina += 2;
+        embarrasment += 2;
     }
 
     public void button2Click() // Fanning
     {
         Debug.Log("Button 2 Clicked, Fanning");
-        budyHeat += 10;
-        stamina += 10;
-        embarrasment -= 10;
+        budyHeat *= 0.9f;
+        stamina -= 10;
+        embarrasment += 10;
     }
 
     public void button3Click() // 
     {
         Debug.Log("Button 3 Clicked");
+        budyHeat = 30;
+        stamina = 100;
+        embarrasment = 0;
     }
 
     private void updateStatusUI()
