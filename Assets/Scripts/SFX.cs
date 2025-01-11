@@ -6,6 +6,7 @@ public class SFX : MonoBehaviour
     [SerializeField] private AudioClip drink;
     [SerializeField] private AudioClip clap;
     [SerializeField] private AudioClip truck;
+    [SerializeField] private AudioClip death;
 
     public void PlayFanning()
     {
@@ -25,6 +26,11 @@ public class SFX : MonoBehaviour
     public void PlayTruck()
     {
         AudioSource.PlayClipAtPoint(truck, Camera.main.transform.position);
+    }
+
+    public void PlayDeath()
+    {
+        AudioSource.PlayClipAtPoint(death, Camera.main.transform.position);
     }
 
 }
